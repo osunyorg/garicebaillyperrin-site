@@ -8,7 +8,26 @@ a
 
   &:hover
     text-decoration-color: currentColor !important
-// Remplacement de la flèche par défaut d'Osuny par l'icône Phosphor (\e07c)
+// 1. Déclaration de la police d'icônes Phosphor avec tes fichiers exacts
+@font-face
+  font-family: 'Phosphor'
+  src: url('/assets/fonts/Phosphor-Fill.woff2') format('woff2'), url('/assets/fonts/Phosphor-Fill.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+  font-display: swap
+
+// 2. Effet de soulignement fluide au survol
+a
+  text-decoration-color: transparent !important
+  text-decoration-line: underline !important
+  text-decoration-thickness: 1px !important
+  text-underline-offset: 0.2em !important
+  transition: text-decoration-color 0.25s ease !important
+
+  &:hover
+    text-decoration-color: currentColor !important
+
+// 3. Remplacement de la flèche par défaut d'Osuny par l'icône Phosphor (\e07c)
 .more::after,
 a.more::after,
 .link-more::after,
