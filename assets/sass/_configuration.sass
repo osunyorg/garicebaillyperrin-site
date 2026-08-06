@@ -90,20 +90,7 @@ header#document-header
   top: 0 !important
   transform: none !important // Bloque le masquage automatique d'Osuny vers le bas
   z-index: 1000
-  transition: background-color 0.3s ease, color 0.3s ease
-
-  // Quand la page a commencé à défiler
-  &.is-sticky, &.is-scrolled, &[data-scrolled="true"]
-    background-color: #15226F !important
-    color: #FFFFFF !important
-
-    // Passe tous les textes, liens, éléments du menu et icônes en blanc
-    a, span, nav, button, .ph, .dropdown-toggle
-      color: #FFFFFF !important
-
-    // Soulignement au survol en blanc
-    a:hover
-      text-decoration-color: #FFFFFF !important
+  
 // upper menu
 $header-upper-menu-background: transparent
 $header-upper-menu-sticky-background: transparent
