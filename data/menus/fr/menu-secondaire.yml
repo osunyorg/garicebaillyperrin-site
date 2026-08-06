@@ -1,0 +1,13 @@
+---
+title: Menu supérieur
+items:
+- title: Laboratorie MICA
+  slug: laboratorie-mica
+  target: "/laboratorie-mica/"
+  kind: page
+  new_tab: false
+  children: []
+  descendants_targets: []
+  path: "/pages/laboratorie-mica"
+  file: content/fr/pages/laboratorie-mica/_index.html
+
