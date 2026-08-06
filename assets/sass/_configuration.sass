@@ -84,6 +84,25 @@ $header-logo-height: pxToRem(30)
 $header-logo-height-desktop: pxToRem(70) // Réduit de 194px à 70px (plus de 2x plus petit !)
 $header-border-bottom-width: 1px
 
+// Header fixe avec changement de couleur au défilement
+header#document-header
+  position: sticky
+  top: 0
+  z-index: 1000
+  transition: background-color 0.3s ease, color 0.3s ease
+
+  // Quand la page défile (état sticky)
+  &.is-sticky, &.is-scrolled
+    background-color: #15226F !important
+    color: #FFFFFF !important
+
+    // On passe tous les textes, liens, icônes et boutons en blanc
+    a, span, nav, button, .ph, .dropdown-toggle
+      color: #FFFFFF !important
+
+    // Si tu as un soulignement de lien au survol, on s'assure qu'il est blanc aussi
+    a:hover
+      text-decoration-color: #FFFFFF !important
 // upper menu
 $header-upper-menu-background: transparent
 $header-upper-menu-sticky-background: transparent
