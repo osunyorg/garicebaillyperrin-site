@@ -88,57 +88,6 @@ a
   &:hover
     text-decoration-color: currentColor !important
 
-// ==========================================
-// 3. HEADER RESPONSIVE (MOBILE & DESKTOP ISOLÉS)
-// ==========================================
-header#document-header
-  position: relative !important
-  z-index: 10
-  background-color: var(--color-background)
-  padding-top: pxToRem(15)
-  padding-bottom: pxToRem(15)
-
-  // Masquer le texte alternatif du logo s'il réapparaît
-  .logo
-    span:not(.sr-only), p
-      display: none !important
-
-    img, svg
-      display: block !important
-
-  // ----------------------------------------
-  // A. COMPORTEMENT MOBILE (< 992px)
-  // ----------------------------------------
-  @media (max-width: 991px)
-    .container
-      display: flex
-      align-items: center
-      justify-content: space-between
-
-    .header-button
-      display: flex !important // Affiche le bouton burger
-      margin-left: auto
-
-    .menu#navigation
-      // Laisse Osuny gérer le masquage et l'ouverture du tiroir burger
-      width: 100%
-
-  // ----------------------------------------
-  // B. COMPORTEMENT DESKTOP (≥ 992px)
-  // ----------------------------------------
-  @media (min-width: 992px)
-    .header-button
-      display: none !important // Masque le bouton burger sur PC
-
-    .container
-      display: flex !important
-      flex-wrap: wrap !important
-      align-items: center !important
-      justify-content: space-between !important
-
-    .logo
-      order: 1
-      margin-right: auto
 
     // Menu principal sur une seconde ligne desktop
     .menu#navigation
