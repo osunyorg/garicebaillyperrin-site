@@ -90,14 +90,14 @@ Extrait de code
 $heading-font-family: "Nohemi", sans-serif
 $body-font-family: "Nohemi", sans-serif
 
-     // ==========================================
-// 3. HEADER STICKY & RESPONSIVE
+// ==========================================
+// 3. HEADER STANDARD (SANS STICKY) & RESPONSIVE
 // ==========================================
 header#document-header
-  position: sticky !important
-  top: 0 !important
+  position: relative !important  // Défilement standard de la page
+  top: auto !important
   transform: none !important
-  z-index: 1000
+  z-index: 10
   background-color: var(--color-background)
   padding-top: pxToRem(15)
   padding-bottom: pxToRem(15)
@@ -173,23 +173,6 @@ header#document-header
             text-decoration: transparent
             transition: text-decoration-color 0.25s ease
 
-            // Icône Phosphor après chaque lien de page
-            &::after
-              font-family: 'Phosphor' !important
-              content: '\e07c' !important
-              font-style: normal
-              font-weight: normal
-              text-transform: none
-              display: inline-block
-              margin-left: 0.35em
-              font-size: 0.75em
-              transition: transform 0.25s ease !important
-
-            &:hover
-              text-decoration-line: underline
-
-            &:hover::after
-              transform: translateX(3px) !important
 // ==========================================
 // 3. EFFET DE SOULIGNEMENT FLUIDE AU SURVOL
 // ==========================================
