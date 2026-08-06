@@ -10,6 +10,24 @@ items:
   descendants_targets: []
   path: "/pages/blog"
   file: content/fr/pages/blog/_index.html
+- title: Actualité de la recherche
+  slug: actualite-de-la-recherche
+  target: "/actualite-de-la-recherche/"
+  kind: page
+  new_tab: false
+  children: []
+  descendants_targets: []
+  path: "/pages/actualite-de-la-recherche"
+  file: content/fr/pages/actualite-de-la-recherche/_index.html
+- title: Littérature scientifique
+  slug: litterature-scientifique
+  target: "/litterature-scientifique/"
+  kind: page
+  new_tab: false
+  children: []
+  descendants_targets: []
+  path: "/pages/litterature-scientifique"
+  file: content/fr/pages/litterature-scientifique/_index.html
 - title: À propos
   slug: a-propos
   target: "/a-propos/"
@@ -28,22 +46,4 @@ items:
   descendants_targets: []
   path: "/pages/contact"
   file: content/fr/pages/contact/_index.html
-- title: Littérature scientifique
-  slug: litterature-scientifique
-  target: "/litterature-scientifique/"
-  kind: page
-  new_tab: false
-  children: []
-  descendants_targets: []
-  path: "/pages/litterature-scientifique"
-  file: content/fr/pages/litterature-scientifique/_index.html
-- title: Actualité de la recherche
-  slug: actualite-de-la-recherche
-  target: "/actualite-de-la-recherche/"
-  kind: page
-  new_tab: false
-  children: []
-  descendants_targets: []
-  path: "/pages/actualite-de-la-recherche"
-  file: content/fr/pages/actualite-de-la-recherche/_index.html
 
