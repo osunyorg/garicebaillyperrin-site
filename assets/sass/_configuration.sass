@@ -165,3 +165,48 @@ $icons-custom-font-family: "Phosphor"
 $icons-custom: ()
 $icons-custom: map-merge($icons-custom, ("arrow-right-line": "\e07c"))
 
+// ==========================================
+// 4. FOOTER MULTI-BLOCS & STYLE
+// ==========================================
+footer#document-footer, footer
+  background-color: #15226F !important
+  background-image: $grain-bg !important
+  background-repeat: repeat !important
+  color: #FFFFFF !important
+  padding-top: pxToRem(60)
+  padding-bottom: pxToRem(60)
+
+  // Disposition en colonnes des blocs du footer
+  .footer-site, .container, .footer-blocks
+    display: grid
+    grid-template-columns: 1fr
+    gap: pxToRem(40)
+
+    @media (min-width: 992px)
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+
+  // Style des titres de blocs
+  h2, h3, .footer-title, .h4
+    color: #FFFFFF !important
+    font-size: pxToRem(18)
+    font-weight: bold
+    margin-bottom: pxToRem(15)
+
+  // Style des liens et listes du footer
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+
+    li
+      margin-bottom: pxToRem(10)
+
+  a
+    color: #FFFFFF !important
+    text-decoration: underline
+    text-decoration-color: transparent !important
+    transition: text-decoration-color 0.25s ease !important
+
+    &:hover
+      text-decoration-color: #FFFFFF !important
+
