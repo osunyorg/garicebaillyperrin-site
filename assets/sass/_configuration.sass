@@ -132,11 +132,16 @@ header#document-header
     align-items: left !important
     justify-content: space-between !important
 
+  
   // 1. Logo en haut à gauche
   .logo, .header-logo, .logo-container
     order: 1
     margin-right: auto
+  span:not(.sr-only), p, .site-title, .title
+      display: none !important
 
+    img, svg
+      display: block !important
   // 2. Liens cliquables en haut à droite (Upper menu)
   .upper-menu, .nav-upper, .header-upper-menu
     order: 2
