@@ -1,5 +1,12 @@
 
+// ==========================================
+// 1. GRAIN / NOISE BACKGROUND (Éco-conçu SVG)
+// ==========================================
+$grain-bg: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E")
 
+// ==========================================
+// 2. VARIABLES DE CONFIGURATION
+// ==========================================
 $header-background: none
 $header-border-bottom-width: 0
 $hero-background-color: none
@@ -72,44 +79,21 @@ $small-line-height-desktop: 143%
 
 // lead
 $lead-sidebar-size-desktop: pxToRem(40)
-// $lead-sidebar-size: $lead-size
-// $lead-sidebar-line-height: $lead-line-height
 $lead-sidebar-line-height-desktop: 125%
 
-// COMPONENTS
 // COMPONENTS
 // header
 $header-background: var(--color-background)
 $header-logo-height: pxToRem(30)
-$header-logo-height-desktop: pxToRem(70) // Réduit de 194px à 70px (plus de 2x plus petit !)
+$header-logo-height-desktop: pxToRem(70)
 $header-border-bottom-width: 1px
 
-// Header fixe et visible en permanence (dans les 2 sens de scroll)
-header#document-header
-  position: sticky !important
-  top: 0 !important
-  transform: none !important // Bloque le masquage automatique d'Osuny vers le bas
-  z-index: 1000
-  transition: background-color 0.3s ease, color 0.3s ease
-
-  // Quand la page a commencé à défiler
-  &.is-sticky, &.is-scrolled, &[data-scrolled="true"]
-    background-color: #15226F !important
-    color: #FFFFFF !important
-
-    // Passe tous les textes, liens, éléments du menu et icônes en blanc
-    a, span, nav, button, .ph, .dropdown-toggle
-      color: #FFFFFF !important
-
-    // Soulignement au survol en blanc
-    a:hover
-      text-decoration-color: #FFFFFF !important
 // upper menu
 $header-upper-menu-background: transparent
 $header-upper-menu-sticky-background: transparent
 $header-upper-menu-border-bottom-width: 0
 $header-nav-padding-y: pxToRem(10)
-$header-nav-padding-y-desktop: pxToRem(10) // Marge interne réduite pour affiner le menu
+$header-nav-padding-y-desktop: pxToRem(10)
 $header-upper-menu-active-decoration-color: transparent
 $header-upper-menu-active-decoration-height: 0
 
@@ -133,7 +117,7 @@ $btn-min-width-desktop: unset
 $btn-border-radius: 20px
 
 // BLOCKS
-// cta | call to action
+// cta | call to action
 $block-call-to-action-button-background: var(--color-accent)
 $block-call-to-action-button-border: none
 $block-call-to-action-button-color: var(--color-background)
@@ -173,6 +157,45 @@ $block-space-y-desktop: pxToRem(100)
 
 // Déclaration de ta police d'icônes personnalisée
 $icons-custom-font-family: "Phosphor"
+
+// Association de la clé d'icône d'Osuny avec ton code Unicode
+$icons-custom: ()
+$icons-custom: map-merge($icons-custom, ("arrow-right-line": "\e07c"))
+
+
+// ==========================================
+// 3. RÈGLES SUR-MESURE & GRAIN (HEADER / FOOTER)
+// ==========================================
+
+// Header fixe, visible en permanence avec effet de grain
+header#document-header
+  position: sticky !important
+  top: 0 !important
+  transform: none !important
+  z-index: 1000
+  transition: background-color 0.3s ease, color 0.3s ease
+  background-image: $grain-bg !important
+  background-repeat: repeat !important
+
+  // Quand la page défile (état sticky)
+  &.is-sticky, &.is-scrolled, &[data-scrolled="true"]
+    background-color: #15226F !important
+    background-image: $grain-bg !important
+    background-repeat: repeat !important
+    color: #FFFFFF !important
+
+    // Passe tous les textes, liens, éléments du menu et icônes en blanc
+    a, span, nav, button, .ph, .dropdown-toggle
+      color: #FFFFFF !important
+
+    // Soulignement au survol en blanc
+    a:hover
+      text-decoration-color: #FFFFFF !important
+
+// Footer avec effet de grain
+footer#document-footer, footer
+  background-image: $grain-bg !important
+  background-repeat: repeat !important
 
 // Association de la clé d'icône d'Osuny avec ton code Unicode
 $icons-custom: ()
