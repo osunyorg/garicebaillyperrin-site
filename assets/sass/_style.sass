@@ -89,49 +89,4 @@ a
     text-decoration-color: currentColor !important
 
 
-    // Menu principal sur une seconde ligne desktop
-    .menu#navigation
-      order: 2
-      width: 100% !important
-      margin-top: pxToRem(15)
-      display: flex !important
-
-      ul.nav-level-1
-        display: flex !important
-        flex-direction: row !important
-        align-items: center !important
-        flex-wrap: wrap !important
-        gap: pxToRem(25) !important
-        list-style: none !important
-        margin: 0 !important
-        padding: 0 !important
-        width: 100% !important
-
-        li
-          display: inline-block
-
-          a
-            font-size: pxToRem(24) !important
-            font-weight: 500
-            text-decoration: transparent
-            transition: text-decoration-color 0.25s ease
-
-            // Flèche Phosphor après chaque lien (sauf Contact)
-            &::after
-              font-family: 'Phosphor' !important
-              content: '\e07c' !important
-              font-style: normal
-              font-weight: normal
-              text-transform: none
-              display: inline-block
-              margin-left: 0.35em
-              font-size: 0.75em
-              transition: transform 0.25s ease !important
-
-            &:hover
-              text-decoration-line: underline
-
-            &:hover::after
-              transform: translateX(3px) !important
-        
 
