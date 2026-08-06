@@ -90,7 +90,106 @@ Extrait de code
 $heading-font-family: "Nohemi", sans-serif
 $body-font-family: "Nohemi", sans-serif
 
-     
+     // ==========================================
+// 3. HEADER STICKY & RESPONSIVE
+// ==========================================
+header#document-header
+  position: sticky !important
+  top: 0 !important
+  transform: none !important
+  z-index: 1000
+  background-color: var(--color-background)
+  padding-top: pxToRem(15)
+  padding-bottom: pxToRem(15)
+
+  // Masquer le texte alternatif du logo pour ne garder que le visuel SVG
+  .logo, .header-logo, .logo-container
+    span:not(.sr-only), p, .site-title, .title
+      display: none !important
+
+    img, svg
+      display: block !important
+
+  // ----------------------------------------
+  // STYLE DESKTOP UNIQUEMENT (Écrans >= 992px)
+  // ----------------------------------------
+  @media (min-width: 992px)
+    a
+      font-size: pxToRem(30) !important
+
+    .container, .header-nav
+      display: flex !important
+      flex-wrap: wrap !important
+      align-items: center !important
+      justify-content: space-between !important
+
+    // 1. Logo en haut à gauche
+    .logo, .header-logo, .logo-container
+      order: 1
+      margin-right: auto
+
+    // 2. Liens cliquables en haut à droite (Upper menu)
+    .upper-menu, .nav-upper, .header-upper-menu
+      order: 2
+      margin-left: auto
+      display: flex
+      align-items: center
+      gap: pxToRem(15)
+
+      ul
+        display: flex
+        list-style: none
+        margin: 0
+        padding: 0
+        gap: pxToRem(15)
+
+        a
+          font-size: pxToRem(30) !important
+
+    // 3. Menu principal sur une nouvelle ligne
+    nav#navigation, .menu, .nav-primary
+      order: 3
+      width: 100% !important
+      margin-top: pxToRem(15)
+      display: flex !important
+
+      ul.nav-level-1, ul.menu-main
+        display: flex !important
+        flex-direction: row !important
+        align-items: center !important
+        flex-wrap: wrap !important
+        gap: pxToRem(25) !important
+        list-style: none !important
+        margin: 0 !important
+        padding: 0 !important
+        width: 100% !important
+
+        li
+          display: inline-block
+
+          a
+            font-size: pxToRem(30) !important
+            font-weight: 500
+            text-decoration: transparent
+            transition: text-decoration-color 0.25s ease
+
+            // Icône Phosphor après chaque lien de page
+            &::after
+              font-family: 'Phosphor' !important
+              content: '\e07c' !important
+              font-style: normal
+              font-weight: normal
+              text-transform: none
+              display: inline-block
+              margin-left: 0.35em
+              font-size: 0.75em
+              transition: transform 0.25s ease !important
+
+            &:hover
+              text-decoration-line: underline
+
+            &:hover::after
+              transform: translateX(3px) !important
 // ==========================================
 // 3. EFFET DE SOULIGNEMENT FLUIDE AU SURVOL
 // ==========================================
