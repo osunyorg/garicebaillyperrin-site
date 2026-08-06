@@ -6,7 +6,7 @@ params:
   search:
     active: true
   logo:
-    header: "/assets/images/logo2.svg"
+    header: "/assets/images/Logo2.svg"
     footer: ""
   home:
     head:
