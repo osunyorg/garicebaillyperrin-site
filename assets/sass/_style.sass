@@ -88,71 +88,66 @@ a
   &:hover
     text-decoration-color: currentColor !important
 
-
 // ==========================================
-// 3. HEADER SUR-MESURE & RESPONSIVE
+// 3. HEADER RESPONSIVE (MOBILE & DESKTOP ISOLÉS)
 // ==========================================
 header#document-header
   position: relative !important
-  top: auto !important
-  transform: none !important
   z-index: 10
   background-color: var(--color-background)
   padding-top: pxToRem(15)
   padding-bottom: pxToRem(15)
 
-  // Masquer le texte alternatif du logo pour ne garder que le visuel SVG
-  .logo, .header-logo, .logo-container
-    span:not(.sr-only), p, .site-title, .title
+  // Masquer le texte alternatif du logo s'il réapparaît
+  .logo
+    span:not(.sr-only), p
       display: none !important
 
     img, svg
       display: block !important
 
   // ----------------------------------------
-  // DISPOSITION DESKTOP UNIQUEMENT (Écrans >= 992px)
+  // A. COMPORTEMENT MOBILE (< 992px)
+  // ----------------------------------------
+  @media (max-width: 991px)
+    .container
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+    .header-button
+      display: flex !important // Affiche le bouton burger
+      margin-left: auto
+
+    .menu#navigation
+      // Laisse Osuny gérer le masquage et l'ouverture du tiroir burger
+      width: 100%
+
+  // ----------------------------------------
+  // B. COMPORTEMENT DESKTOP (≥ 992px)
   // ----------------------------------------
   @media (min-width: 992px)
-    a
-      font-size: pxToRem(30) !important
+    .header-button
+      display: none !important // Masque le bouton burger sur PC
 
-    .container, .header-nav
+    .container
       display: flex !important
       flex-wrap: wrap !important
       align-items: center !important
       justify-content: space-between !important
 
-    // 1. Logo en haut à gauche
-    .logo, .header-logo, .logo-container
+    .logo
       order: 1
       margin-right: auto
 
-    // 2. Liens secondaires en haut à droite (Upper menu)
-    .upper-menu, .nav-upper, .header-upper-menu
+    // Menu principal sur une seconde ligne desktop
+    .menu#navigation
       order: 2
-      margin-left: auto
-      display: flex
-      align-items: center
-      gap: pxToRem(15)
-
-      ul
-        display: flex
-        list-style: none
-        margin: 0
-        padding: 0
-        gap: pxToRem(15)
-
-        a
-          font-size: pxToRem(30) !important
-
-    // 3. Menu principal sur une nouvelle ligne
-    nav#navigation, .menu, .nav-primary
-      order: 3
       width: 100% !important
       margin-top: pxToRem(15)
       display: flex !important
 
-      ul.nav-level-1, ul.menu-main
+      ul.nav-level-1
         display: flex !important
         flex-direction: row !important
         align-items: center !important
@@ -167,15 +162,15 @@ header#document-header
           display: inline-block
 
           a
-            font-size: pxToRem(30) !important
+            font-size: pxToRem(24) !important
             font-weight: 500
             text-decoration: transparent
             transition: text-decoration-color 0.25s ease
 
-            // Icône Phosphor après chaque lien
+            // Flèche Phosphor après chaque lien (sauf Contact)
             &::after
               font-family: 'Phosphor' !important
-              content: '\e03e' !important
+              content: '\e07c' !important
               font-style: normal
               font-weight: normal
               text-transform: none
@@ -189,6 +184,5 @@ header#document-header
 
             &:hover::after
               transform: translateX(3px) !important
-
         
 
